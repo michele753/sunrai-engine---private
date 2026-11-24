@@ -1,0 +1,11 @@
+Ciao! Allora, in breve: sì, il flusso si può automatizzare quasi sicuramente. Quanto sarà semplice dipende da come riusciamo a prendere i dati da Sganet.
+
+Primo punto: su Sganet non ho trovato documentazione pubblica, quindi la prima cosa da fare è chiedere al fornitore se esistono delle API.
+
+Le strade possibili, dalla più solida alla meno solida, sono cinque. Uno: le API del gestionale, che sono la soluzione ideale. Due: l'accesso al database in sola lettura, con il permesso del fornitore. Tre: un export automatico di file, per esempio CSV o Excel, letti ogni pochi minuti. Quattro: intercettare i PDF dei buoni che Sganet genera già. Cinque, come ultima risorsa: un robot che usa il gestionale al posto dell'operatore.
+
+Il flusso sarebbe questo. Arriva un nuovo ritiro in Sganet. Leggiamo i dati: mittente, indirizzo, data, colli, peso e vettore. Generiamo il buono di ritiro in PDF. Lo inviamo all'autotrasportatore via email, WhatsApp o SMS. Poi tracciamo se l'ha ricevuto e confermato, e se serve aggiorniamo lo stato in Sganet.
+
+Per partire mi servono alcune risposte dall'azienda: che versione di Sganet usano, se è in cloud o sui loro server, se ci sono API o export, un esempio di buono attuale, come scelgono il vettore, e quale canale preferiscono i trasportatori.
+
+Con queste informazioni ti preparo un'architettura precisa e un prototipo.
